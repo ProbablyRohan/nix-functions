@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   writeNushellScript = pkgs.lib.makeOverridable ({ pname, version, src, installPath, ... }:
     pkgs.stdenvNoCC.mkDerivation {
-      inherit pname version src
+      inherit pname version src;
       dontUnpack = true;
       installPhase = ''
         mkdir $out/bin -p
